@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单_基本结构</title>
+</head>
+
+<body>
+    <!-- 当使用 GET 请求时，表单中的数据通常会以查询字符串的形式附加到 URL 上，
+    作为请求的一部分。这些数据会以请求参数（Request Parameters）的形式发送。-->
+
+    <!--  当使用 POST 请求时，表单中的数据通常会被包含在请求的正文（Request Body）中，
+    而不是作为查询字符串附加到 URL 上。-->
+
+    <form action="https://search.jd.com/search" method="get">
+        <fieldset>
+            <legend>主要信息</legend>
+            <label for="zhanghu">账户:</label><input id="zhanghu" type="text" name="account" value="zhangshan"
+                maxlength="20">
+            <br>
+
+            <label for="mima">密码:</label><input id="mima" type="password" name="pwd" maxlength="20">
+            <br>
+
+            性别:
+            <input type="radio" name="gender" value="male" checked>男
+            <input type="radio" name="gender" value="female">女
+            <br>
+
+            爱好:
+            <input type="checkbox" name="hobby" value="smoke" checked>抽烟
+            <input type="checkbox" name="hobby" value="drink">喝酒
+            <input type="checkbox" name="hobby" value="pem" checked>烫头
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>附加信息</legend>
+            其他:
+            <textarea name="other" cols="30" rows="10"></textarea>
+            <br>
+
+            籍贯:
+            <select name="place">
+                <option value="河北省">河北</option>
+                <option value="山西省">山西</option>
+                <option value="广东省" selected>广东</option>
+                <option value="湖北省">湖北省</option>
+            </select>
+
+            <br>
+
+            <!-- 确认按钮的第一种写法 -->
+            <button>确认</button>
+
+            <!-- 确认按钮的第二种写法 -->
+            <input type="submit" value="确认">
+
+            <br>
+
+            <!-- 重制按钮的第一种写法 -->
+            <button type="reset">重制</button>
+
+            <!-- 重制按钮的第二种写法 -->
+            <input type="reset" value="重置">
+
+            <br>
+
+            <!-- 普通按钮第一种写法-->
+            <button type="button">检测账户</button>
+            <!-- 普通按钮第一种写法-->
+            <input type="button" value="检测账户">
+        </fieldset>
+        <!-- 隐藏域：用户不可见的输入区域，作用是提交表单的时候，携带一些固定的数据。比如防止恶意脚本刷qq号-->
+        <input type="hidden" name="from" value="toutian">
+    </form>
+</body>
+
+</html>
